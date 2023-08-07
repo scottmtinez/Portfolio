@@ -1,0 +1,8 @@
+/* FOR Mobile SCREEN SIZE < ?px */
+@media only screen and (max-width: 1010px){
+    .body-container{
+        background-color: blue;
+    }
+
+    
+} /* END */
