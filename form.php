@@ -1,52 +1,55 @@
 <?php
-    $errors = [];
+//Import PHPMailer classes into the global namespace
+//These must be at the top of your script, not inside a function
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
 
-    if(!empty($_POST)){
+//Load Composer's autoloader
+require 'vendor/autoload.php';
+
+//Create an instance; passing `true` enables exceptions
+$mail = new PHPMailer(true);
+
+try {
+    //Server settings
+    $mail->isSMTP();                                            //Send using SMTP
+    $mail->Host       = 'smtp.sendgrid.net';                     //Set the SMTP server to send through
+    $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
+    $mail->Username   = 'apikey';                     //SMTP username
+    $mail->Password   = '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';                               //SMTP password
+    $mail->SMTPSecure = 'tls';            //Enable implicit TLS encryption
+    $mail->Port       = 587;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+
+    //Recipients
+    $mail->setFrom('owner@scottmartinezportfolio.com', 'Your Portfolio');
+
+    $mail->addAddress('scottmtinez@gmail.com', 'Scott Martinez');     //Add a recipient 
+
+
+    //Get form infromation
         $name = $_POST['iname'];
         $company = $_POST['icompany'];
         $subject = $_POST['isub'];
         $email = $_POST['iemail'];
         $content = $_POST['icontent'];
 
-        if(empty($name)){
-            $errors[] = 'Name is Empty';
-        }
 
-        if(empty($company)){
-            $errors[] = 'Company is Empty';
-        }
+    //Content
+    $mail->isHTML(true);                                  //Set email format to HTML
+    $mail->Subject = 'Someone is Trying to Contact you Through your Website Portfolio Contact Form!';
+    $mail->Body    = 'Name: ' . $name . '<br>
+                      Company: ' . $company . '<br>
+                      Subject: ' . $subject . '<br>
+                      Email: ' . $email . '<br>
+                      Content: ' . $content;
 
-        if(empty($subject)){
-            $errors[] = 'Subject is Empty';
-        }
+    //$mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
-        if(empty($email)){
-            $errors[] = 'Email is Empty';
-        }else if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-            $errors[] = 'Email is invalid';
-        }
-
-        if(empty($content)){
-            $errors[] = 'Content is Empty';
-        }
-
-        if(empty($errors)){
-            $toEmail = 'scottmtinez@gmail.com';
-            $emailSubject = 'Someone is trying to contact you from you portfolio!';
-            $headers = ['From' => $email, 'Reply-To' => $email, 'Content-Type' => 'text/html; charset=utf-8'];
-            $bodyParagraphs = ["Name: {$name}", "Company: {$company}", "Subject: {$subject}", "Email: {$email}", "Content: {$content}"];
-            $body = join(PHP_EOL, $bodyParagraphs);
-
-            if (mail($toEmail, $emailSubject, $body, $headers)) {
-                header('Location: thank-you.html');
-            } else {
-                $errorMessage = 'Oops, something went wrong. Please try again later';
-            }
-        }else{
-            $allErrors = join('<br/>', $errors);
-            $errorMessage = "<p style='color: red;'>{$allErrors}</p>";
-        }
-
-        
-    }
+    $mail->send();
+    echo 'Message has been sent';
+} catch (Exception $e) {
+    echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+}
+    
 ?>
