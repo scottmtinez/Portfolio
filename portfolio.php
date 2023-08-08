@@ -125,16 +125,37 @@
         <div class="tab-container">
             <h1 class="contactMe">CONTACT ME</h1>
             <div class="contactMe-form">
-                <form class="contactMe-page" action="form.php" method="POST">
+                <form class="contactMe-page" id="form" action="form.php" method="POST">
                     <input type="text" class="iname" name="iname" placeholder="Name..." required><br>
                     <input type="text" class="icompany" name="icompany" placeholder="Company..." required><br>
                     <input type="text" class="isub" name="isub" placeholder="Subject..." required><br>
                     <input type="text" class="iemail" name="iemail" placeholder="Email..." required><br>
                     <textarea class="icontent" name="icontent" placeholder="Content..." required></textarea><br>
-                    <input type="submit" class="isubmit" value="Contact" required><br>
+                    <input type="submit" class="isubmit"  id="submit" value="Contact" required><br>
                 </form>
+                <div id="response"></div>
+                <div class='wrapper' id='checked'> 
+                    <svg class='checkmark' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 52 52'> <circle class='checkmark__circle' cx='26' cy='26' r='25' fill='none'/> <path class='checkmark__check' fill='none' d='M14.1 27.2l7.1 7.2 16.7-16.8'/></svg>
+                </div>
             </div>
         </div>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script>
+                $("#submit").click(function(){
+                    $.post($("#form").attr("action"), 
+                    $("#form :input").serializeArray(),
+                    function(info){
+                        $("#response").empty();
+                        document.getElementById("form").style.display = "none";
+                        document.getElementById("checked").style.display = "block";
+                    });
+
+                    $("#form").submit(function(){
+                        return false;
+                    });
+                });
+        </script>
+
     </section>
     <div class="spacer layer2"></div>
 </body>
