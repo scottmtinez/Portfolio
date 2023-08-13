@@ -26,6 +26,46 @@
 /* FOR SCREEN SIZE < 1920px - My Screen*/
 @media only screen and (max-width: 1920px){
 
+/* ----- Popup  Window for Users to Enter Site ------*/
+.enter-page{
+    background-color: rgb(24, 24, 24);
+    border-radius: 25px;
+    border: solid black 1px;
+    width: 60%;
+    height: 50%;
+    position: absolute;
+    top: 25%;
+    right: 20%;
+    z-index: 2;
+    position: fixed;
+}
+
+.enter-page-title{
+    margin-top: 15%;
+    text-align: center;
+    color: #fa7369;
+}
+
+.enter-form{
+    text-align: center;
+}
+
+.enterbtn{
+    width: 100px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.enterbtn:hover{
+    background-color: #fa7369;
+    color: black;
+}
+
+.enter-p{
+    text-align: center;
+    color: white;
+}
+
 /* ----- Profile Picture Container ------ */
 .profile-container{
     background-color: purple;
@@ -36,6 +76,7 @@
     margin-top: 15%;
     clip-path: circle(50% at 50% 50%);
     text-align: center;
+    z-index: 1;
 }
 
 
@@ -84,6 +125,8 @@
     font-size: 15px;
     color: rgb(104, 103, 103);
     text-decoration: none;
+    background-color: transparent;
+    border: none;
 }
 
 .homebtn:hover{
@@ -99,6 +142,8 @@
     font-size: 15px;
     color: rgb(104, 103, 103);
     text-decoration: none;
+    background-color: transparent;
+    border: none;
 }
 
 .projects:hover{
@@ -114,6 +159,8 @@
     font-size: 15px;
     color: rgb(104, 103, 103);
     text-decoration: none;
+    background-color: transparent;
+    border: none;
 }
 
 .skills:hover{
@@ -129,6 +176,8 @@
     font-size: 15px;
     color: rgb(104, 103, 103);
     text-decoration: none;
+    background-color: transparent;
+    border: none;
 }
 
 .aboutMe:hover{
@@ -139,26 +188,13 @@
     color: purple;
 }
 
-.resume{
-    margin-left: 50px;
-    font-size: 15px;
-    color: rgb(104, 103, 103);
-    text-decoration: none;
-}
-
-.resume:hover{
-    color: darkgrey;
-}
-
-.resume:active{
-    color: purple;
-}
-
 .contact-me{
     margin-left: 50px;
     font-size: 15px;
     color: rgb(104, 103, 103);
     text-decoration: none;
+    background-color: transparent;
+    border: none;
 }
 
 .contact-me:hover{
@@ -491,4 +527,46 @@
     background-color: rgb(173, 1, 173);
 }
 
+
+.wrapper{
+    display:none; 
+    background-color:transparent; 
+    justify-content:center; 
+    align-items:center; 
+    background-color:transparent
+}
+
+.checkmark__circle{
+    stroke-dasharray: 166;
+    stroke-dashoffset: 166;
+    stroke-width: 2;
+    stroke-miterlimit: 10;
+    stroke: #7ac142;
+    fill: none;
+    animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards
+}
+
+.checkmark{
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    display: block;
+    stroke-width: 2;
+    stroke: #fff;
+    stroke-miterlimit: 10;
+    margin: 10% auto;
+    box-shadow: inset 0px 0px 0px #7ac142;
+    animation: fill .4s ease-in-out .4s forwards, scale .3s ease-in-out .9s both
+}
+
+.checkmark__check{
+    transform-origin: 50% 50%;
+    stroke-dasharray: 48;
+    stroke-dashoffset: 48;
+    animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards
+}
+
+@keyframes stroke{100%{stroke-dashoffset: 0}}
+@keyframes scale{0%, 100%{transform: none}50%{transform: scale3d(1.1, 1.1, 1)}}
+@keyframes fill{100%{box-shadow: inset 0px 0px 0px 30px #7ac142}}
 } /* END */
