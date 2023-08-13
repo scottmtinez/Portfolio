@@ -26,6 +26,50 @@
 /* FOR SCREEN SIZE < 1920px - My Screen*/
 @media only screen and (max-width: 1920px){
 
+/* ----- Popup  Window for Users to Enter Site ------*/
+.enter-page{
+    background-color: rgb(24, 24, 24);
+    border-radius: 25px;
+    border: solid black 1px;
+    width: 60%;
+    height: 50%;
+    position: absolute;
+    top: 25%;
+    right: 20%;
+    z-index: 2;
+    position: fixed;
+}
+
+.enter-page-title{
+    margin-top: 15%;
+    text-align: center;
+    color: #fa7369;
+}
+
+.enter-form{
+    text-align: center;
+}
+
+.enterbtn{
+    width: 100px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.enterbtn:hover{
+    background-color: #fa7369;
+    color: black;
+}
+
+.enter-p{
+    text-align: center;
+    color: white;
+}
+
+.enter-input{
+    
+}
+
 /* ----- Profile Picture Container ------ */
 .profile-container{
     background-color: purple;
@@ -36,6 +80,7 @@
     margin-top: 15%;
     clip-path: circle(50% at 50% 50%);
     text-align: center;
+    z-index: 1;
 }
 
 
@@ -84,6 +129,8 @@
     font-size: 15px;
     color: rgb(104, 103, 103);
     text-decoration: none;
+    background-color: transparent;
+    border: none;
 }
 
 .homebtn:hover{
@@ -99,6 +146,8 @@
     font-size: 15px;
     color: rgb(104, 103, 103);
     text-decoration: none;
+    background-color: transparent;
+    border: none;
 }
 
 .projects:hover{
@@ -114,6 +163,8 @@
     font-size: 15px;
     color: rgb(104, 103, 103);
     text-decoration: none;
+    background-color: transparent;
+    border: none;
 }
 
 .skills:hover{
@@ -129,6 +180,8 @@
     font-size: 15px;
     color: rgb(104, 103, 103);
     text-decoration: none;
+    background-color: transparent;
+    border: none;
 }
 
 .aboutMe:hover{
@@ -139,26 +192,13 @@
     color: purple;
 }
 
-.resume{
-    margin-left: 50px;
-    font-size: 15px;
-    color: rgb(104, 103, 103);
-    text-decoration: none;
-}
-
-.resume:hover{
-    color: darkgrey;
-}
-
-.resume:active{
-    color: purple;
-}
-
 .contact-me{
     margin-left: 50px;
     font-size: 15px;
     color: rgb(104, 103, 103);
     text-decoration: none;
+    background-color: transparent;
+    border: none;
 }
 
 .contact-me:hover{
@@ -534,3 +574,4 @@
 @keyframes scale{0%, 100%{transform: none}50%{transform: scale3d(1.1, 1.1, 1)}}
 @keyframes fill{100%{box-shadow: inset 0px 0px 0px 30px #7ac142}}
 } /* END */
+
