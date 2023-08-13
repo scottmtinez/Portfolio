@@ -8,10 +8,86 @@
     <link rel="stylesheet" href="largeScreen.css"> 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" />
-    <title>Scott Martinez: Portfolio</title>
+    <title>Scott Martínez: Portfolio</title>
 </head>
 <body class="body-container">
     <script src="skills.js"></script>
+    <section id="enter"> <!-- Enter Page -->
+        <div class="enter-page" id="enter-page">
+            <h2 class="enter-page-title">Welcome to the Portfolio of Scott Martínez!</h2>
+            <p class="enter-p">
+                Check out my page and Scroll to the bottom of the page to get in contact with me. <br>
+                Enter what company you are from below or click the enter button to enter the site.
+            </p>
+            <form class="enter-form" id="enter-form" method="POST">
+                <input type="text" class="enteri" name="enteri" id="enteri" placeholder="Company Name">
+                <input type="submit" class="enterbtn" id="enterbtn" name="enterbtn" value="Enter">                
+            </form>
+            <?php
+                use PHPMailer\PHPMailer\PHPMailer;
+                use PHPMailer\PHPMailer\SMTP;
+                use PHPMailer\PHPMailer\Exception;
+                
+                if(isset($_POST['enterbtn'])){
+                                    //Load Composer's autoloader
+                    require 'vendor/autoload.php';
+
+                //Create an instance; passing `true` enables exceptions
+                    $mail = new PHPMailer(true);
+                
+                //Server
+                    try {
+                        //Server settings
+                            //$mail->SMTPDebug = SMTP::DEBUG_SERVER;   
+                            $mail->isSMTP();                                            
+                            $mail->Host       = 'smtp.sendgrid.net';                     
+                            $mail->SMTPAuth   = true;                                   
+                            $mail->Username   = 'apikey';                     
+                            $mail->Password   = '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';                               
+                            $mail->SMTPSecure = 'tls';            
+                            $mail->Port       = 587;                                  
+                        //Recipients
+                            $mail->setFrom('owner@scottmartinezportfolio.com', 'Your Portfolio'); //From
+
+                            $mail->addAddress('scottmtinez@gmail.com', 'Scott Martinez'); //To
+
+
+                        //Get form infromation
+                            $comp = $_POST['enteri'];
+
+                         
+                        //Gets Visitors IP Address
+                            $IP = "";
+                            if(!empty($_SERVER["HTTP_CLIENT_IP"])){
+                                $IP = $_SERVER["HTTP_CLIENT_IP"];
+                            }else if(!empty($_SERVER["HTTP_X_FORWARDED_FOR"])){
+                                $IP = $_SERVER["HTTP_X_FORWARDED_FOR"];
+                            }else{
+                                $IP = $_SERVER["REMOTE_ADDR"];
+                            }
+
+                        //Content
+                            $mail->isHTML(true); //Set email format to HTML
+                            $mail->Subject = 'Someone just visited your Portfolio!';
+                            $mail->Body    = 'Company: '  . $comp .'<br>
+                                              IP Address: ' . $IP;
+
+
+
+                            $mail->send(); //NOTE: Find a new way not to refresh the page... & add a captcha
+                            echo " 
+                                <script> 
+                                    document.getElementById('enter-page').style.display = 'none';
+                                </script>
+                            ";
+                    } catch (Exception $e) {
+                        echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+                    }
+                }
+            ?>
+        </div>
+    </section>
+
     <section id="home">
     <div class="spacer layer1"></div>
         <div class="profile-container"><img class="prof" src="myself.jpg"></div> <!-- Contains profile picture -->
@@ -19,15 +95,21 @@
             <h1 class="name">Scott Martínez</h1>
             <!-- <h1 class="job-title">Front-End Developer</h1> *For Job Title -->
             <nav class="nav-bar"> <!-- Navigation Bar -->
-                <a class="homebtn" href="#home">HOME</a> 
-                <a class="aboutMe" href="#aboutMe">ABOUT ME</a>
-                <a class="skills" href="#skills">SKILLS</a>
-                <a class="projects" href="#projects">PROJECTS</a>
-                <a class="contact-me" href="#contact">CONTACT ME</a>
+                <form method="POST">
+                    <input class="homebtn" name="homebtn" type="button" onclick="window.location.href = '#home';" value="HOME"/>
+                    <input class="aboutMe" name="aboutMe" type="button" onclick="window.location.href = '#aboutMe';" value="ABOUT ME"/>
+                    <input class="skills" name="skills" type="button" onclick="window.location.href = '#skills';" value="SKILLS"/>
+                    <input class="projects" name="projects" type="button" onclick="window.location.href = '#projects';" value="PROJECTS"/>
+                    <input class="contact-me" name="contact-me" type="button" onclick="window.location.href = '#contact';" value="CONTACT ME"/>
+                </form>
+
             </nav>
         </div> 
     </section>
-    
+
+    <?php
+        //???
+    ?>
 
 <!-- About Me Container -->
     <h2 class="space"></h2>
@@ -125,13 +207,13 @@
         <div class="tab-container">
             <h1 class="contactMe">CONTACT ME</h1>
             <div class="contactMe-form">
-                <form class="contactMe-page" id="form" action="form.php" method="POST">
+                <form class="contactMe-page" id="form" method="POST">
                     <input type="text" class="iname" name="iname" placeholder="Name..." required><br>
                     <input type="text" class="icompany" name="icompany" placeholder="Company..." required><br>
                     <input type="text" class="isub" name="isub" placeholder="Subject..." required><br>
                     <input type="text" class="iemail" name="iemail" placeholder="Email..." required><br>
                     <textarea class="icontent" name="icontent" placeholder="Content..." required></textarea><br>
-                    <input type="submit" class="isubmit"  id="submit" value="Contact" required><br>
+                    <input type="submit" class="isubmit"  name="submit" id="submit" value="Contact" required><br>
                 </form>
                 <div id="response"></div>
                 <div class='wrapper' id='checked'> 
@@ -139,23 +221,75 @@
                 </div>
             </div>
         </div>
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        <script>
-                $("#submit").click(function(){
-                    $.post($("#form").attr("action"), 
-                    $("#form :input").serializeArray(),
-                    function(info){
-                        $("#response").empty();
-                        document.getElementById("form").style.display = "none";
-                        document.getElementById("checked").style.display = "block";
-                    });
 
-                    $("#form").submit(function(){
-                        return false;
-                    });
-                });
-        </script>
+        <?php
+            if(isset($_POST['submit'])){
+                //Load Composer's autoloader
+                    require 'vendor/autoload.php';
 
+                //Create an instance; passing `true` enables exceptions
+                    $mail = new PHPMailer(true);
+                
+                //Server
+                    try {
+                        //Server settings
+                            //$mail->SMTPDebug = SMTP::DEBUG_SERVER;   
+                            $mail->isSMTP();                                            
+                            $mail->Host       = 'smtp.sendgrid.net';                     
+                            $mail->SMTPAuth   = true;                                   
+                            $mail->Username   = 'apikey';                     
+                            $mail->Password   = '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';                               
+                            $mail->SMTPSecure = 'tls';            
+                            $mail->Port       = 587;                                  
+                        //Recipients
+                            $mail->setFrom('owner@scottmartinezportfolio.com', 'Your Portfolio'); //From
+
+                            $mail->addAddress('scottmtinez@gmail.com', 'Scott Martinez'); //To
+
+
+                        //Get form infromation
+                            $name = $_POST['iname'];
+                            $company = $_POST['icompany'];
+                            $subject = $_POST['isub'];
+                            $email = $_POST['iemail'];
+                            $content = $_POST['icontent'];
+                         
+                        //Gets Visitors IP Address
+                            $IP = "";
+                            if(!empty($_SERVER["HTTP_CLIENT_IP"])){
+                                $IP = $_SERVER["HTTP_CLIENT_IP"];
+                            }else if(!empty($_SERVER["HTTP_X_FORWARDED_FOR"])){
+                                $IP = $_SERVER["HTTP_X_FORWARDED_FOR"];
+                            }else{
+                                $IP = $_SERVER["REMOTE_ADDR"];
+                            }
+
+                        //Content
+                            $mail->isHTML(true); //Set email format to HTML
+                            $mail->Subject = 'Someone is Trying to Contact you Through your Website Portfolio Contact Form!';
+                            $mail->Body    = 'Name: ' . $name . '<br>
+                                            Company: ' . $company . '<br>
+                                            Subject: ' . $subject . '<br>
+                                            Email: ' . $email . '<br>
+                                            Content: ' . $content . '<br>
+                                            IP Address: ' . $IP;
+
+
+
+                            $mail->send(); //NOTE: Find a new way not to refresh the page... & add a captcha
+                            echo " 
+                                <script> 
+                                    document.getElementById('form').style.display = 'none';
+                                    document.getElementById('checked').style.display = 'block';
+                                </script>
+                            ";
+                    } catch (Exception $e) {
+                        echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+                    }
+
+
+            }
+        ?>
     </section>
     <div class="spacer layer2"></div>
 </body>
