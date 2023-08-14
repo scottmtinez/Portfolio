@@ -12,7 +12,7 @@
 </head>
 <body class="body-container">
     <script src="skills.js"></script>
-    <section id="enter"> <!-- Enter Page -->
+    <section id="enter-page-background" class="enter-page-background"> <!-- Enter Page -->
         <div class="enter-page" id="enter-page">
             <h2 class="enter-page-title">Welcome to the Portfolio of Scott Martínez!</h2>
             <p class="enter-p">
@@ -43,7 +43,7 @@
                             $mail->Host       = 'smtp.sendgrid.net';                     
                             $mail->SMTPAuth   = true;                                   
                             $mail->Username   = 'apikey';                     
-                            $mail->Password   = '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';                               
+                            $mail->Password   = 'Secret';                               
                             $mail->SMTPSecure = 'tls';            
                             $mail->Port       = 587;                                  
                         //Recipients
@@ -74,10 +74,11 @@
 
 
 
-                            $mail->send(); //NOTE: Find a new way not to refresh the page... & add a captcha
+                            $mail->send(); 
                             echo " 
                                 <script> 
                                     document.getElementById('enter-page').style.display = 'none';
+                                    document.getElementById('enter-page-background').style.display = 'none';
                                 </script>
                             ";
                     } catch (Exception $e) {
@@ -162,7 +163,7 @@
             <div class="projects-container">
 
                 <div class="project1">
-                    <h2 class="p1">Portfolio Web Applicaiton <span style="font-size: 12px;"> HTML, CSS, JS, & PHP</span></h2>
+                    <h2 class="p1">Portfolio Web Applicaiton <span style="font-size: 12px; color: #fa7369;"> HTML, CSS, JS, & PHP</span></h2>
                     <p class="p1_p">
                         This project was created to display my person front-end development work. <br>
                         <button class="demo" onclick="window.location.href='https://scottmartinezportfolio.com/';">DEMO</button>
@@ -171,28 +172,28 @@
                 </div>
 
                 <div class="project2">
-                    <h2 class="p2">Recipe Web Application <span style="font-size: 12px;"> HTML, CSS, JS, PHP, & MYSQL</span></h2>
+                    <h2 class="p2">Recipe Web Application <span style="font-size: 12px; color: #fa7369;"> HTML, CSS, JS, PHP, & MYSQL</span></h2>
                     <p class="p2_p">
-                        This project was created to let a user read and share recipes with other users by letting the user add recipes by sending the recipes information to a mysql database.<br>
-                        <button class="demo" onclick="window.location.href='';">DEMO - COMING SOON</button>
-                        <button class="code" onclick="window.location.href='';">CODE</button> <!-- https://github.com/scottmtinez/recipeapp'; -->
+                        This project was created to let a user read and share recipes with other users by letting the user add recipes by sending the recipes information to a mysql database.
+                        <button class="demo" onclick="window.location.href='#projects';">DEMO - COMING SOON</button>
+                        <button class="code" onclick="window.location.href='#projects';">CODE</button> <!-- https://github.com/scottmtinez/recipeapp'; -->
                     </p>
                 </div>
 
                 <div class="project3">
-                    <h2 class="p3">Workout Routine Web Applicaiton<span style="font-size: 12px;"> HTML, CSS, JS, PHP, & MYSQL</span></h2>
+                    <h2 class="p3">Workout Routine Web Applicaiton<span style="font-size: 12px; color: #fa7369;"> HTML, CSS, JS, PHP, & MYSQL</span></h2>
                     <p class="p3_p">
                         This project was created to let user create workout routings by creating, adding, deletign & updating exercises. <br>
-                        <button class="demo" onclick="window.location.href='';">DEMO - COMING SOON</button>
-                        <button class="code" onclick="window.location.href='';">CODE</button> <!-- https://github.com/scottmtinez/workoutroutine -->
+                        <button class="demo" onclick="window.location.href='#projects';">DEMO - COMING SOON</button>
+                        <button class="code" onclick="window.location.href='#projects';">CODE</button> <!-- https://github.com/scottmtinez/workoutroutine -->
                     </p>
                 </div>
 
                 <div class="project4">
-                    <h2 class="p4">Weather Web Applicaiton using an API<span style="font-size: 12px;"> HTML, CSS, JS, & PHP</span></h2>
+                    <h2 class="p4">Weather Web Applicaiton using an API<span style="font-size: 12px; color: #fa7369;"> HTML, CSS, JS, & PHP</span></h2>
                     <p class="p4_p">
                         This project was created to let the user use a search bar to check to see what the weather is in that area using the data from an API. <br>
-                        <button class="demo" onclick="window.location.href='';">DEMO - COMING SOON</button>
+                        <button class="demo" onclick="window.location.href='#projects';">DEMO - COMING SOON</button>
                         <button class="code" onclick="window.location.href='';">CODE</button> 
                     </p>
                 </div>
@@ -205,7 +206,7 @@
     <div style="margin-top: 10%;"></div>
     <section id="contact">
         <div class="tab-container">
-            <h1 class="contactMe">CONTACT ME</h1>
+
             <div class="contactMe-form">
                 <form class="contactMe-page" id="form" method="POST">
                     <input type="text" class="iname" name="iname" placeholder="Name..." required><br>
@@ -213,7 +214,7 @@
                     <input type="text" class="isub" name="isub" placeholder="Subject..." required><br>
                     <input type="text" class="iemail" name="iemail" placeholder="Email..." required><br>
                     <textarea class="icontent" name="icontent" placeholder="Content..." required></textarea><br>
-                    <input type="submit" class="isubmit"  name="submit" id="submit" value="Contact" required><br>
+                    <input type="submit" class="isubmit"  name="submit" id="submit" value="Contact" href="#contact"required><br>
                 </form>
                 <div id="response"></div>
                 <div class='wrapper' id='checked'> 
@@ -221,7 +222,6 @@
                 </div>
             </div>
         </div>
-
         <?php
             if(isset($_POST['submit'])){
                 //Load Composer's autoloader
@@ -238,7 +238,7 @@
                             $mail->Host       = 'smtp.sendgrid.net';                     
                             $mail->SMTPAuth   = true;                                   
                             $mail->Username   = 'apikey';                     
-                            $mail->Password   = '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';                               
+                            $mail->Password   = 'Secret';                               
                             $mail->SMTPSecure = 'tls';            
                             $mail->Port       = 587;                                  
                         //Recipients
@@ -279,15 +279,15 @@
                             $mail->send(); //NOTE: Find a new way not to refresh the page... & add a captcha
                             echo " 
                                 <script> 
+                                    document.getElementById('enter-page').style.display = 'none';
                                     document.getElementById('form').style.display = 'none';
                                     document.getElementById('checked').style.display = 'block';
+                                    document.getElementById('enter-page-background').style.display = 'none';
                                 </script>
                             ";
                     } catch (Exception $e) {
                         echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
                     }
-
-
             }
         ?>
     </section>
