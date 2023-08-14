@@ -36,8 +36,19 @@
     position: absolute;
     top: 25%;
     right: 20%;
-    z-index: 2;
+    z-index: 3;
     position: fixed;
+}
+
+#enter-page-background{
+    background-color: rgba(255, 255, 255, .15);  
+    backdrop-filter: blur(25px);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    position: fixed;
+    z-index: 2;
+    display: block;
 }
 
 .enter-page-title{
@@ -64,10 +75,6 @@
 .enter-p{
     text-align: center;
     color: white;
-}
-
-.enter-input{
-    
 }
 
 /* ----- Profile Picture Container ------ */
@@ -231,13 +238,15 @@
     margin-top: -140px;
 }
 
+
+
 /* ----- About Me Container ------*/
 #aboutMe{
     padding-top: 11%;
 }
 
 .aboutMe-title{
-    color: white;
+    color: purple;
     text-align: center;
     font-size: 35px;
     text-decoration: underline;
@@ -252,7 +261,7 @@
 }
 
 .aboutMe-info{
-    color: #212529;
+    color: rgb(124, 124, 124);
     margin: auto;
     font-size: 14px;
     font-family: Lucida Bright;
@@ -331,7 +340,6 @@
 }
 
 .skill{
-    color: white;
     text-align: center;
     font-size: 35px;
     text-decoration: underline;
@@ -341,7 +349,7 @@
 }
 
 .skills-title1{
-    color: white;
+    color: purple;
     text-align: center;
     font-size: 35px;
     text-decoration: underline;
@@ -357,11 +365,11 @@
     display: none;
     margin-bottom: 15px;
     border-radius: 1%;
-    color: #212529;
+    color: rgb(124, 124, 124);
 }
 
 .slink{
-    color: #212529;
+    color: rgb(124, 124, 124);
     text-decoration: none;
     background-color: transparent;
     all: unset;
@@ -393,6 +401,7 @@
     border: 2px solid black;
     margin-bottom: 2px;
     margin: 0 auto;
+    color: rgb(124, 124, 124);
 }
 
 .col{
@@ -404,6 +413,14 @@
     overflow: hidden;
 }
 
+.sk-title{
+    color: purple;
+}
+
+.sk-sub-title{
+    color: #fa7369;
+}
+
 
 
 /* ----- Projects Container ------*/
@@ -412,7 +429,7 @@
 }
 
 .tprojects{
-    color: white;
+    color: purple;
     font-size: 35px;
     text-align: center;
     text-decoration: underline;
@@ -429,7 +446,7 @@
 .project1, .project2, .project3, .project4{
     width: 75%;
     height: 5%;
-    color: #212529;
+    color: purple;
     margin: 0 auto;
     margin-bottom: 10px;
     border-radius: 20px;
@@ -444,9 +461,8 @@
 
 .demo{
     background-color: transparent;
-    color: #212529;
     all: unset;
-    border: solid #212529 1px;
+    border: solid rgb(124, 124, 124) 1px;
     border-radius: 4px;
 }
 
@@ -462,9 +478,8 @@
 
 .code{
     background-color: transparent;
-    color: #212529;
     all: unset;
-    border: solid #212529 1px;
+    border: solid rgb(124, 124, 124) 1px;
     border-radius: 4px;
 }
 
@@ -493,7 +508,7 @@
 .p1_p, .p2_p, .p3_p, .p4_p{
     margin-top: -1%;
     margin-left: 3%;
-    color: #212529;
+    color: rgb(124, 124, 124);
     font-size: 14px;
     margin-bottom: 3px;
 }
@@ -518,7 +533,7 @@
 .iname, .icompany, .isub, .iemail, .icontent{
     margin-bottom: 3px;
     border: solid purple 1px;
-    color: #212529;
+    color: white;
     width: 27%;
     background-color: transparent;
 }
@@ -574,4 +589,3 @@
 @keyframes scale{0%, 100%{transform: none}50%{transform: scale3d(1.1, 1.1, 1)}}
 @keyframes fill{100%{box-shadow: inset 0px 0px 0px 30px #7ac142}}
 } /* END */
-
