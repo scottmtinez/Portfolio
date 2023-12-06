@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" />
     <title>Scott Martínez: Portfolio</title>
 </head>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <body class="body-container">
     <script src="skills.js"></script>
     <section id="enter-page-background" class="enter-page-background"> <!-- Enter Page -->
@@ -43,7 +44,7 @@
                             $mail->Host       = 'smtp.sendgrid.net';                     
                             $mail->SMTPAuth   = true;                                   
                             $mail->Username   = 'apikey';                     
-                            $mail->Password   = 'Secret';                               
+                            $mail->Password   = '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';                               
                             $mail->SMTPSecure = 'tls';            
                             $mail->Port       = 587;                                  
                         //Recipients
@@ -55,22 +56,10 @@
                         //Get form infromation
                             $comp = $_POST['enteri'];
 
-                         
-                        //Gets Visitors IP Address
-                            $IP = "";
-                            if(!empty($_SERVER["HTTP_CLIENT_IP"])){
-                                $IP = $_SERVER["HTTP_CLIENT_IP"];
-                            }else if(!empty($_SERVER["HTTP_X_FORWARDED_FOR"])){
-                                $IP = $_SERVER["HTTP_X_FORWARDED_FOR"];
-                            }else{
-                                $IP = $_SERVER["REMOTE_ADDR"];
-                            }
-
                         //Content
                             $mail->isHTML(true); //Set email format to HTML
                             $mail->Subject = 'Someone just visited your Portfolio!';
-                            $mail->Body    = 'Company: '  . $comp .'<br>
-                                              IP Address: ' . $IP;
+                            $mail->Body    = 'Company: '  . $comp;
 
 
 
@@ -94,9 +83,8 @@
         <div class="profile-container"><img class="prof" src="myself.jpg"></div> <!-- Contains profile picture -->
         <div class="profile-bar"> <!-- Bar that goes through the profile picture -->
             <h1 class="name">Scott Martínez</h1>
-            <!-- <h1 class="job-title">Front-End Developer</h1> *For Job Title -->
             <nav class="nav-bar"> <!-- Navigation Bar -->
-                <form method="POST">
+                <form method="POST" class="nav-desktop">
                     <input class="homebtn" name="homebtn" type="button" onclick="window.location.href = '#home';" value="HOME"/>
                     <input class="aboutMe" name="aboutMe" type="button" onclick="window.location.href = '#aboutMe';" value="ABOUT ME"/>
                     <input class="skills" name="skills" type="button" onclick="window.location.href = '#skills';" value="SKILLS"/>
@@ -104,13 +92,29 @@
                     <input class="contact-me" name="contact-me" type="button" onclick="window.location.href = '#contact';" value="CONTACT ME"/>
                 </form>
 
+                <div class="mobile-nav"> <!-- Nav Bar for Mobile Devices -->
+                    <button class="toggle-btn" onclick="toggleNav()">&#9776;</button>
+                    <nav class="nav-menu" id="navMenu">
+                        <ul>
+                            <li><a class="mlink" onclick="window.location.href = '#home';">HOME</a></li>
+                            <li><a class="mlink" onclick="window.location.href = '#aboutMe';">ABOUT ME</a></li>
+                            <li><a class="mlink" onclick="window.location.href = '#skills';">SKILLS</a></li>
+                            <li><a class="mlink" onclick="window.location.href = '#projects';">PROJECTS</a></li>
+                            <li><a class="mlink" onclick="window.location.href = '#contact';">CONTACT ME</a></li>
+                        </ul>
+                    </nav>
+                </div>
             </nav>
         </div> 
     </section>
 
-    <?php
-        //???
-    ?>
+    <script>
+        function toggleNav() {
+            var navMenu = document.getElementById("navMenu");
+            navMenu.style.display = (navMenu.style.display === "block") ? "none" : "block";
+        }
+    </script>
+
 
 <!-- About Me Container -->
     <h2 class="space"></h2>
@@ -131,9 +135,9 @@
         </div>
     </section>
 
-
  <!-- Skills Container -->
     <section id="skills-container">
+        
         <div class="tab-container" class="skill">
             <h2 id="skills" class="skills-title1">SKILLS</h2>
             <div class="col" style="padding-bottom: 2%; padding-top: 2%;" id='skbox'>
@@ -151,6 +155,7 @@
                 <div class="skcontainer"><img class="illustrator" src="illustrator.png"><button class="slink" onclick="open12()" id="sk12"> Adobe Illustrator | Proficient</div>
                 <div class="skcontainer"><img class="javascript" src="js.png"><button class="slink" onclick="open13()" id="sk13"> JavaScript | Proficient</div>
                 <div class="skcontainer"><img class="nodejs" src="nodejs.png"><button class="slink" onclick="open14()" id="sk14"> Node.js | Novice</div>
+                <div class="skcontainer"><img class="reactjs" src=""><button class="slink" onclick="open15()" id="sk15"> React.js | Proficient</div>
             </div>
             <?php include 'skills.php'; ?>
         </div>
@@ -161,41 +166,95 @@
         <div class="tab-container">
             <h1 class="tprojects">Projects</h1>
             <div class="projects-container">
-
-                <div class="project1">
-                    <h2 class="p1">Portfolio Web Applicaiton <span style="font-size: 12px; color: #fa7369;"> HTML, CSS, JS, & PHP</span></h2>
-                    <p class="p1_p">
-                        This project was created to display my person front-end development work. <br>
+                <h4 style="color: #fa7369; text-align: center;">Finished Projects</h4>
+                <div class="project_section">
+                    <div class='ls-container'>
+                        <h2 class="project-title">Portfolio Website <span style="font-size: 12px; color: #fa7369;"> HTML, CSS, JS, & PHP</span></h2>
+                        <p class="project-paragraph">
+                            This portfolio website serves as a showcase for my personal front-end development endeavors. Explore a curated collection of projects that highlight my skills in HTML, CSS, JavaScript, and PHP. Discover the intersection of creativity and functionality through my work, each project crafted with passion and a commitment to delivering an engaging user experience. <br>
+                        </p>
+                    </div>
+                    <div class="rs-container">
                         <button class="demo" onclick="window.location.href='https://scottmartinezportfolio.com/';">DEMO</button>
                         <button class="code" onclick="window.location.href='https://github.com/scottmtinez/Portfolio';">CODE</button>
-                    </p>
+                    </div>
                 </div>
 
-                <div class="project2">
-                    <h2 class="p2">Recipe Web Application <span style="font-size: 12px; color: #fa7369;"> HTML, CSS, JS, PHP, & MYSQL</span></h2>
-                    <p class="p2_p">
-                        This project was created to let a user read and share recipes with other users by letting the user add recipes by sending the recipes information to a mysql database.
-                        <button class="demo" onclick="window.location.href='#projects';">DEMO - COMING SOON</button>
-                        <button class="code" onclick="window.location.href='#projects';">CODE</button> <!-- https://github.com/scottmtinez/recipeapp'; -->
-                    </p>
+                <div class="project_section">
+                    <div class='ls-container'>
+                    <h2 class="project-title">Weather Application using an API<span style="font-size: 12px; color: #fa7369;"> HTML, CSS, JS, & PHP</span></h2>
+                        <p class="project-paragraph">
+                            This initiative was developed to empower users with the ability to check local weather conditions through a user-friendly search bar. Leveraging data from an API, this project provides an intuitive platform for users to easily access real-time weather information for a specified location. <br>
+                        </p>
+                    </div>
+                    <div class="rs-container">
+                        <button class="demo" onclick="window.location.href='https://weatherapp.scottmartinezportfolio.com/';">DEMO</button>
+                        <button class="code" onclick="window.location.href='https://github.com/scottmtinez/weatherapp';">CODE</button> 
+                    </div>
+                </div>
+                
+                <div class="project_section">
+                    <div class='ls-container'>
+                    <h2 class="project-title">Recipe Website<span style="font-size: 12px; color: #fa7369;"> HTML, CSS, JS, PHP, & MYSQL</span></h2>
+                        <p class="project-paragraph">
+                            Crafted as a dynamic fusion of a social media platform and a recipe-sharing hub, this web-based application empowers users to create personalized accounts, fostering a vibrant community of culinary enthusiasts. The platform facilitates seamless exploration and discovery of a diverse array of recipes through an interactive 'Discover' page. Developed with a tech stack encompassing HTML, CSS, Node.js, JavaScript, and MySQL, this project showcases my proficiency in building engaging and interactive web experiences. <br>
+                        </p>
+                    </div>
+                    <div class="rs-container">
+                        <button class="demo" onclick="window.location.href='https://uwwrecipewebsite.scottmartinezportfolio.com/';">DEMO</button>
+                        <button class="code" onclick="window.location.href='https://github.com/scottmtinez/recipeapp';">CODE</button>  
+                    </div>
                 </div>
 
-                <div class="project3">
-                    <h2 class="p3">Workout Routine Web Applicaiton<span style="font-size: 12px; color: #fa7369;"> HTML, CSS, JS, PHP, & MYSQL</span></h2>
-                    <p class="p3_p">
-                        This project was created to let user create workout routings by creating, adding, deletign & updating exercises. <br>
-                        <button class="demo" onclick="window.location.href='#projects';">DEMO - COMING SOON</button>
-                        <button class="code" onclick="window.location.href='#projects';">CODE</button> <!-- https://github.com/scottmtinez/workoutroutine -->
-                    </p>
+                <div class="project_section">
+                    <div class='ls-container'>
+                    <h2 class="project-title">Login & Registration System<span style="font-size: 12px; color: #fa7369;"> HTML, CSS, JS, PHP, & MYSQL</span></h2>
+                        <p class="project-paragraph">
+                            This project aims to facilitate user account management by allowing individuals to seamlessly create an account if they don't already have one. Once registered, users can effortlessly log in to access the website's features and content. <br>
+                        </p>
+                    </div>
+                    <div class="rs-container">
+                        <button class="demo" onclick="window.location.href='http://loginandregistrationsystem.scottmartinezportfolio.com/';">DEMO</button>
+                        <button class="code" onclick="window.location.href='https://github.com/scottmtinez/loginAndRegistrationSystem';">CODE</button> 
+                    </div>
+                </div>
+                
+                <div class="project_section">
+                    <div class='ls-container'>
+                    <h2 class="project-title">Movie Insider Website<span style="font-size: 12px; color: #fa7369;"> HTML, CSS, REACT.JS, NODE.JS, FIREBASE, MYSQL, & API</span></h2>
+                        <p class="project-paragraph">
+                            Engineered to offer users seamless access to a vast movie database, this platform empowers users to effortlessly search for any movie through an intuitive search bar. Leveraging the power of APIs, the platform dynamically populates results based on user queries. Developed using cutting-edge technologies including React.js, Node.js, HTML, CSS, and integrated with MySQL, Firebase, and additional APIs, this project showcases my proficiency in creating interactive and data-driven web applications. <br>
+                        </p>
+                    </div>
+                    <div class="rs-container">
+                        <button class="demo" onclick="window.location.href='https://movieinsider.scottmartinezportfolio.com/';">DEMO</button>
+                        <button class="code" onclick="window.location.href='https://github.com/scottmtinez/Movie-Search-Web-Application';">CODE</button>  
+                    </div>
                 </div>
 
-                <div class="project4">
-                    <h2 class="p4">Weather Web Applicaiton using an API<span style="font-size: 12px; color: #fa7369;"> HTML, CSS, JS, & PHP</span></h2>
-                    <p class="p4_p">
-                        This project was created to let the user use a search bar to check to see what the weather is in that area using the data from an API. <br>
-                        <button class="demo" onclick="window.location.href='#projects';">DEMO - COMING SOON</button>
-                        <button class="code" onclick="window.location.href='';">CODE</button> 
-                    </p>
+                <div class="project_section">
+                    <div class='ls-container'>
+                    <h2 class="project-title">Chat Bot AI<span style="font-size: 12px; color: #fa7369;"> HTML, CSS, JS, FLASK, & DIALOGPT</span></h2>
+                        <p class="project-paragraph">
+                        This project served as a hands-on exploration of Python Flask, delving into the intricacies of web application development. Leveraging this newfound knowledge, I employed Python to create an interactive chat bot powered by DialoGPT. This AI-driven bot adeptly responds to user messages, showcasing the application of Python Flask, HTML, CSS, and JavaScript. It demonstrates my dedication to ongoing skill enhancement and innovative web application development. <br>
+                        </p>
+                    </div>
+                    <div class="rs-container">
+                        <button class="code" onclick="window.location.href='https://github.com/scottmtinez/Chat-Bot-AI';">CODE</button> 
+                    </div>
+                </div>
+
+                <h4 style="color: #fa7369; text-align: center; margin-top: 35px;">In Progress Projects</h4>
+                <div class="project_section">
+                    <div class='ls-container'>
+                    <h2 class="project-title">Packed AI<span style="font-size: 12px; color: #fa7369;"> HTML, CSS, NODE.JS, REACT.JS, FIREBASE, MYSQL, & API </span></h2>
+                        <p class="project-paragraph">
+                            The ultimate travel companion for seamless vacation planning. This innovative project harnesses the power of artificial intelligence to generate personalized packing lists tailored to your specific destination and travel itinerary. Whether you're embarking on a tropical getaway or a city adventure, SmartPackerAI takes the guesswork out of packing, ensuring you have all the essentials you need. Simply input your travel details, and let the intelligent algorithm curate a comprehensive packing list, optimizing your luggage for efficiency and convenience. <br>
+                        </p>
+                    </div>
+                    <div class="rs-container">
+                        <button class="code" onclick="window.location.href='https://www.figma.com/proto/bb18rqm832RQoUH4JpOT41/PackIT?node-id=3-7&mode=design&t=453gyp6XxLUKXoOf-1';">FIGMA</button> 
+                    </div>
                 </div>
 
             </div>
@@ -206,7 +265,7 @@
     <div style="margin-top: 10%;"></div>
     <section id="contact">
         <div class="tab-container">
-
+        <h1 class="contactMe">Contact Me</h1>
             <div class="contactMe-form">
                 <form class="contactMe-page" id="form" method="POST">
                     <input type="text" class="iname" name="iname" placeholder="Name..." required><br>
@@ -216,12 +275,12 @@
                     <textarea class="icontent" name="icontent" placeholder="Content..." required></textarea><br>
                     <input type="submit" class="isubmit"  name="submit" id="submit" value="Contact" href="#contact"required><br>
                 </form>
-                <div id="response"></div>
                 <div class='wrapper' id='checked'> 
                     <svg class='checkmark' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 52 52'> <circle class='checkmark__circle' cx='26' cy='26' r='25' fill='none'/> <path class='checkmark__check' fill='none' d='M14.1 27.2l7.1 7.2 16.7-16.8'/></svg>
                 </div>
             </div>
         </div>
+
         <?php
             if(isset($_POST['submit'])){
                 //Load Composer's autoloader
@@ -238,9 +297,10 @@
                             $mail->Host       = 'smtp.sendgrid.net';                     
                             $mail->SMTPAuth   = true;                                   
                             $mail->Username   = 'apikey';                     
-                            $mail->Password   = 'Secret';                               
+                            $mail->Password   = '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';                               
                             $mail->SMTPSecure = 'tls';            
-                            $mail->Port       = 587;                                  
+                            $mail->Port       = 587;         
+
                         //Recipients
                             $mail->setFrom('owner@scottmartinezportfolio.com', 'Your Portfolio'); //From
 
@@ -254,16 +314,6 @@
                             $email = $_POST['iemail'];
                             $content = $_POST['icontent'];
                          
-                        //Gets Visitors IP Address
-                            $IP = "";
-                            if(!empty($_SERVER["HTTP_CLIENT_IP"])){
-                                $IP = $_SERVER["HTTP_CLIENT_IP"];
-                            }else if(!empty($_SERVER["HTTP_X_FORWARDED_FOR"])){
-                                $IP = $_SERVER["HTTP_X_FORWARDED_FOR"];
-                            }else{
-                                $IP = $_SERVER["REMOTE_ADDR"];
-                            }
-
                         //Content
                             $mail->isHTML(true); //Set email format to HTML
                             $mail->Subject = 'Someone is Trying to Contact you Through your Website Portfolio Contact Form!';
@@ -271,8 +321,7 @@
                                             Company: ' . $company . '<br>
                                             Subject: ' . $subject . '<br>
                                             Email: ' . $email . '<br>
-                                            Content: ' . $content . '<br>
-                                            IP Address: ' . $IP;
+                                            Content: ' . $content;
 
 
 
