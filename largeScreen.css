@@ -1,0 +1,630 @@
+/* Main Background Color */
+.body-container{
+    background-color: black;
+}
+
+/* Waves */
+.spacer{
+    aspect-ratio: 900/450;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    margin-bottom: -45%;
+}
+
+.layer1{
+    background-image: url('./wave.svg');
+}
+
+.layer2{
+    background-image: url('./wave2.svg');
+    color: black;
+}
+
+
+/* FOR SCREEN SIZE > 1000px - My Screen*/
+@media only screen and (min-width: 1000px){
+
+/* ----- Popup  Window for Users to Enter Site ------*/
+.enter-page{
+    background-color: rgb(24, 24, 24);
+    border-radius: 25px;
+    border: solid black 1px;
+    width: 60%;
+    height: 50%;
+    position: absolute;
+    top: 25%;
+    right: 20%;
+    z-index: 3;
+    position: fixed;
+}
+
+#enter-page-background{
+    background-color: rgba(255, 255, 255, .15);  
+    backdrop-filter: blur(25px);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    position: fixed;
+    z-index: 2;
+    display: block;
+}
+
+.enter-page-title{
+    margin-top: 15%;
+    text-align: center;
+    color: #fa7369;
+}
+
+.enter-form{
+    text-align: center;
+}
+
+.enterbtn{
+    width: 100px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.enterbtn:hover{
+    background-color: #fa7369;
+    color: black;
+}
+
+.enter-p{
+    text-align: center;
+    color: white;
+}
+
+/* ----- Profile Picture Container ------ */
+.profile-container{
+    background-color: purple;
+    height: 300px;
+    width: 300px;
+    border-radius: 100%;
+    margin: auto;
+    margin-top: 15%;
+    clip-path: circle(50% at 50% 50%);
+    text-align: center;
+    z-index: 1;
+}
+
+
+.prof{ /* Profile Picture */
+    width: 300px;
+    height: 400px;
+}
+
+.name{
+    color: white;
+    position: relative;
+    top: -45px;
+    font-family: Lucida Bright;
+}
+
+.job-title{
+    color: white;
+    position: relative;
+    top: -100px;
+    left: 670px;
+    font-size: 35px;
+    text-align: justify;
+    font-family: Lucida Bright;
+}
+
+
+.profile-bar{
+    background-color: #800080;
+    color: white;
+    height: 2px;
+    width: 1000px; 
+    margin: auto;
+    margin-top: -140px;
+}
+
+
+
+
+/* ----- Nav Bar Container ------ */
+.toggle-btn{
+    display: none;
+}
+
+.nav-menu{
+    display: none;
+}
+
+.nav-bar{
+    position: relative;
+    top: -55px;
+}
+
+.homebtn{
+    font-size: 15px;
+    color: rgb(104, 103, 103);
+    text-decoration: none;
+    background-color: transparent;
+    border: none;
+}
+
+.homebtn:hover{
+    color: darkgrey;
+}
+
+.homebtn:active{
+    color: purple;
+}
+
+.projects{
+    margin-left: 400px;
+    font-size: 15px;
+    color: rgb(104, 103, 103);
+    text-decoration: none;
+    background-color: transparent;
+    border: none;
+}
+
+.projects:hover{
+    color: darkgrey;
+}
+
+.projects:active{
+    color: purple;
+}
+
+.skills{
+    margin-left: 50px;
+    font-size: 15px;
+    color: rgb(104, 103, 103);
+    text-decoration: none;
+    background-color: transparent;
+    border: none;
+}
+
+.skills:hover{
+    color: darkgrey;
+}
+
+.skills:active{
+    color: purple;
+}
+
+.aboutMe{
+    margin-left: 50px;
+    font-size: 15px;
+    color: rgb(104, 103, 103);
+    text-decoration: none;
+    background-color: transparent;
+    border: none;
+}
+
+.aboutMe:hover{
+    color: darkgrey;
+}
+
+.aboutMe:active{
+    color: purple;
+}
+
+.contact-me{
+    margin-left: 50px;
+    font-size: 15px;
+    color: rgb(104, 103, 103);
+    text-decoration: none;
+    background-color: transparent;
+    border: none;
+}
+
+.contact-me:hover{
+    color: darkgrey;
+}
+
+.contact-me:active{
+    color: purple;
+}
+
+
+
+/* ----- Other ------*/
+.tab-container{
+    width: 50%;
+    margin: auto;
+}
+
+.space{
+    margin-top: 10%;
+}
+
+
+.break{
+    background-color: #800080;
+    color: white;
+    height: 2px;
+    width: 1000px; 
+    margin: auto;
+    margin-top: -140px;
+}
+
+
+
+/* ----- About Me Container ------*/
+#aboutMe{
+    padding-top: 11%;
+}
+
+.aboutMe-title{
+    color: purple;
+    text-align: center;
+    font-size: 35px;
+    text-decoration: underline;
+    font-family: Lucida Bright;
+}
+
+.my-info{
+    text-align: center;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    font-family: Lucida Bright;
+}
+
+.aboutMe-info{
+    color: rgb(124, 124, 124);
+    margin: auto;
+    font-size: 14px;
+    font-family: Lucida Bright;
+    width: 70%;
+    height: 30%;
+    margin-bottom: 10px;
+    text-align: justify;
+}
+
+.download-resume{
+    background-color: transparent;
+    border:solid white 1px;
+    color: white;
+    font-family: Lucida Bright;
+    text-decoration: none;
+}
+
+.download-resume:hover{
+    border:solid purple 1px;
+    color: purple;
+    font-family: Lucida Bright;
+    text-decoration: none;
+}
+
+.download-resume:active{
+    border:solid purple 2px;
+    color: purple;
+    font-family: Lucida Bright;
+    text-decoration: none;
+}
+
+.gitHub{
+    color: white;
+}
+
+.gitHub:hover{
+    color: purple;
+}
+
+.gitHub:active{
+    color: purple;
+}
+
+.linkedin{
+    color: white;
+}
+
+.linkedin:hover{
+    color: purple;
+}
+
+.linkedin:active{
+    color: purple;
+}
+
+.instagram{
+    color: white;
+}
+
+.instagram:hover{
+    color: purple;
+}
+
+.instagram:active{
+    color: purple;
+}
+
+
+
+
+
+
+/* ----- Skills Container ------*/
+#skills-container{
+    padding-top: 15%;
+}
+
+.skill{
+    text-align: center;
+    font-size: 35px;
+    text-decoration: underline;
+    font-family: Lucida Bright;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.skills-title1{
+    color: purple;
+    text-align: center;
+    font-size: 35px;
+    text-decoration: underline;
+}
+
+.sbox{
+    background-color: transparent;
+    border: solid purple 1px;
+    padding-left: 5px;
+    width: 50%;
+    height: 30%;
+    margin: auto;
+    display: none;
+    margin-bottom: 15px;
+    border-radius: 1%;
+    color: rgb(124, 124, 124);
+}
+
+.slink{
+    color: rgb(124, 124, 124);
+    text-decoration: none;
+    background-color: transparent;
+    all: unset;
+}
+
+.slink:hover{
+    color: purple;
+}
+
+.closelink{
+    position: relative;
+    float: right;
+    text-decoration: none;
+    color: purple;
+    border: solid purple 0.5px;
+    font-weight: bold;
+}
+
+.closelink:hover{
+    color: rgb(151, 2, 151);
+    border: solid rgb(151, 2, 151) 1px;
+}
+
+.skcontainer{
+    width: 55%;
+    height: 35px;
+    font-weight: bold;
+    font-size: 14px;
+    border: 2px solid black;
+    margin-bottom: 2px;
+    margin: 0 auto;
+    color: rgb(124, 124, 124);
+}
+
+.col{
+    columns: 3;
+    column-width: 300px;
+    display: inline-block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.sk-title{
+    color: purple;
+}
+
+.sk-sub-title{
+    color: #fa7369;
+}
+
+
+
+/* ----- Projects Container ------*/
+#projects{
+    padding-top: 10%;
+}
+
+.tprojects{
+    color: purple;
+    font-size: 35px;
+    text-align: center;
+    text-decoration: underline;
+}
+
+.projects-container{
+    grid-gap: 10px;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+    padding-top: 5px;
+    padding-bottom: 25px;
+}
+
+.project_section{
+    width: 85%;
+    height: 5%;
+    color: purple;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    border-radius: 20px;
+    background-color: transparent;
+    border: solid purple 2px;
+}
+
+.pbtn{
+    text-align: center;
+    padding-top: 105%;
+}
+
+.demo{
+    background-color: transparent;
+    all: unset;
+    color: rgb(124, 124, 124);
+    border: solid rgb(124, 124, 124) 1px;
+    border-radius: 4px;
+    padding: 2px;
+    text-align: center;
+}
+
+.demo:hover{
+    color: purple;
+    border: solid purple 1px;
+}
+
+.demo:active{
+    color: purple;
+    border: solid purple 1px;
+}
+
+.code{
+    background-color: transparent;
+    all: unset;
+    color: rgb(124, 124, 124);
+    border: solid rgb(124, 124, 124) 1px;
+    border-radius: 4px;
+    padding: 2px;
+    text-align: center;
+}
+
+.code:hover{
+    color: purple;
+    border: solid purple 1px;
+}
+
+.code:active{
+    color: purple;
+    border: solid purple 1px;
+}
+
+
+.pt1{
+    text-align: center;
+    font-size: 14px;
+    padding-top: 5%;
+    color: white;
+}
+
+.project-title{
+    margin-left: 3%;
+}
+
+
+.project-paragraph{
+    margin-top: -1%;
+    margin-left: 3%;
+    color: rgb(124, 124, 124);
+    font-size: 14px;
+    margin-bottom: 3px;
+}
+
+.ls-container{
+    width: 88%; /* Set the width to 50% to make it take half of the parent width */
+    float: left; /* Float the container to the left */
+    
+}
+
+.rs-container{
+    width: 11%; /* Set the width to 50% to make it take half of the parent width */
+    float: left; /* Float the container to the left */
+    margin-top: 5%;
+}
+
+.demo, .code {
+    display: block; /* Make buttons a block element to stack them vertically */
+    margin-bottom: 10px; /* Add some margin between buttons */
+  }
+
+  /* Clearfix to prevent the parent container from collapsing */
+  .project_section::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+/* ----- Contact Me Container ------*/
+#contact{
+    margin-bottom: -20%;
+}
+
+.contactMe{
+    color: purple;
+    text-align: center;
+    text-decoration: underline;
+}
+
+.contactMe-form{
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.iname, .icompany, .isub, .iemail, .icontent{
+    margin-bottom: 3px;
+    border: solid purple 1px;
+    color: white;
+    width: 27%;
+    background-color: transparent;
+}
+
+.isubmit{
+    background-color: purple;
+}
+
+.isubmit:hover{
+    background-color: rgb(173, 1, 173);
+}
+
+
+.wrapper{
+    display:none; 
+    background-color:transparent; 
+    justify-content:center; 
+    align-items:center; 
+    background-color:transparent
+}
+
+.checkmark__circle{
+    stroke-dasharray: 166;
+    stroke-dashoffset: 166;
+    stroke-width: 2;
+    stroke-miterlimit: 10;
+    stroke: #7ac142;
+    fill: none;
+    animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards
+}
+
+.checkmark{
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    display: block;
+    stroke-width: 2;
+    stroke: #fff;
+    stroke-miterlimit: 10;
+    margin: 0 auto;
+    margin-top: 10%;
+    box-shadow: inset 0px 0px 0px #7ac142;
+    animation: fill .4s ease-in-out .4s forwards, scale .3s ease-in-out .9s both
+}
+
+.checkmark__check{
+    transform-origin: 50% 50%;
+    stroke-dasharray: 48;
+    stroke-dashoffset: 48;
+    animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards
+}
+
+@keyframes stroke{100%{stroke-dashoffset: 0}}
+@keyframes scale{0%, 100%{transform: none}50%{transform: scale3d(1.1, 1.1, 1)}}
+@keyframes fill{100%{box-shadow: inset 0px 0px 0px 30px #7ac142}}
+} /* END */
