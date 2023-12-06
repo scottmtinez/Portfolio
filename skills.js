@@ -69,6 +69,11 @@
         const p = document.getElementById('s14').style.display = 'block';
     }
 
+    function open15(){
+        const d = document.getElementById('skbox').style.display = 'none';
+        const p = document.getElementById('s15').style.display = 'block';
+    }
+
 
 
 
@@ -144,6 +149,10 @@
         const d = document.getElementById('skbox').style.display = 'block';
         const p = document.getElementById('s14').style.display = 'none';
     }
+
+    function close15(){
+        const d = document.getElementById('skbox').style.display = 'block';
+        const p = document.getElementById('s15').style.display = 'none';
+    }
     
     
-   
