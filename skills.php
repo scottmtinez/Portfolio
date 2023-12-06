@@ -6,9 +6,9 @@
         <!-- C++ -->
             <div class='sbox' id='s1'>
                 <a class='closelink' href='javascript:close1()'>X</a>
-                <h1>C++</h1>
+                <h1 class='sk-title'>C++</h1>
                 <p>
-                    <h5> 4 Years of School Experience </h5>
+                    <h5 class='sk-sub-title'> 4 Years of School Experience </h5>
                     <h6 style='color: purple;'>Knowledge:</h6>
                     In school, I learned an advanced level of object-oriented programming, delved into intricate topics such as memory management, pointers, and user-defined data types. 
                     The course also emphasized various aspects, such as reading and writing to files, dynamic arrays, and implementing the principles of object-oriented design, including encapsulation and inheritance. 
@@ -31,9 +31,9 @@
         <!-- Java -->
             <div class='sbox' id='s2'>
                 <a class='closelink' href='javascript:close2()'>X</a>
-                <h1>Java</h1>
+                <h1 class='sk-title'>Java</h1>
                 <p>
-                    <h5>1 Year of School Experience</h5>
+                    <h5 class='sk-sub-title'>1 Year of School Experience</h5>
                     <h6 style='color: purple;'>Knowledge:</h6>
                     Advanced topics of Object-Oriented Programming. <br>
                     Using algorithms to solve problems, and implement solutions with VS Code to employ objects and classes. <br>
@@ -50,9 +50,9 @@
         <!-- HTML -->
             <div class='sbox' id='s3'>
                 <a class='closelink' href='javascript:close3()'>X</a>
-                <h1>HTML</h1>
+                <h1 class='sk-title'>HTML</h1>
                 <p>
-                    <h5> 5 Years of School Exerpience </h5>
+                    <h5 class='sk-sub-title'> 5 Years of School Exerpience </h5>
                     <h6 style='color: purple;'>Knowledge:</h6>
                     Managing windows, forms, events, & cookies using JavaScript. <br>
                     Connecting HTML to a database. <br>
@@ -79,9 +79,9 @@
         <!-- CSS -->
             <div class='sbox' id='s4'>
                 <a class='closelink' href='javascript:close4()'>X</a>
-                <h1>CSS</h1>
+                <h1 class='sk-title'>CSS</h1>
                 <p>
-                    <h5> 5 Years of School Exerpience </h5>
+                    <h5 class='sk-sub-title'> 5 Years of School Exerpience </h5>
                     <h6 style='color: purple;'>Knowledge:</h6>
                     Creating animations that will occur when an event happens like, when the users mouse hovers over a link or button is clicked. <br>
                     Loading Animcations. <br>
@@ -109,9 +109,9 @@
         <!-- Python -->
             <div class='sbox' id='s5'>
                 <a class='closelink' href='javascript:close5()'>X</a>
-                <h1>Python</h1>
+                <h1 class='sk-title'>Python</h1>
                 <p>
-                    <h5> 1 Years of School Exerpience </h5>
+                    <h5 class='sk-sub-title'> 1 Years of School Exerpience </h5>
                     <h6 style='color: purple;'>Knowledge:</h6>
                     Creating structured programs that are based on simple algorithms that involve input, output, mathematical operations, decisions, and loops. <br><br>
 
@@ -126,9 +126,9 @@
         <!-- Linux -->
             <div class='sbox' id='s6'>
                 <a class='closelink' href='javascript:close6()'>X</a>
-                <h1>Python</h1>
+                <h1 class='sk-title'>Python</h1>
                 <p>
-                    <h5> 1 Years of School Exerpience </h5>
+                    <h5 class='sk-sub-title'> 1 Years of School Exerpience </h5>
                     <h6 style='color: purple;'>Knowledge:</h6>
                     Implementing an intrusion detection and incident response system. <br>
                     System Administrator. <br>
@@ -151,9 +151,9 @@
         <!-- Databases-->
             <div class='sbox' id='s7'>
                 <a class='closelink' href='javascript:close7()'>X</a>
-                <h1>MySql, MariaDB, & MongoDB</h1>
+                <h1 class='sk-title'>MySql, MariaDB, & MongoDB</h1>
                 <p>
-                    <h5> 3 Years of School Exerpience </h5>
+                    <h5 class='sk-sub-title'> 3 Years of School Exerpience </h5>
                     <h6 style='color: purple;'>Knowledge:</h6>
                     Using MySql to access, create, update, & delete data from a database. <br>
                     Maintaining databases using PHP. <br><br>
@@ -174,9 +174,9 @@
         <!-- PHP -->
             <div class='sbox' id='s8'>
                 <a class='closelink' href='javascript:close8()'>X</a>
-                <h1>PHP</h1>
+                <h1 class='sk-title'>PHP</h1>
                 <p>
-                    <h5> 4 Years of School Exerpience </h5>
+                    <h5 class='sk-sub-title'> 4 Years of School Exerpience </h5>
                     <h6 style='color: purple;'>Knowledge:</h6>
                     Creating & managing dynamic web pages, databases, & session tracking. <br><br>
 
@@ -196,9 +196,9 @@
         <!-- Bootstraps -->
             <div class='sbox' id='s9'>
                 <a class='closelink' href='javascript:close9()'>X</a>
-                <h1>Bootstraps</h1>
+                <h1 class='sk-title'>Bootstraps</h1>
                 <p>
-                    <h5> 3 Years of School Exerpience </h5>
+                    <h5 class='sk-sub-title'> 3 Years of School Exerpience </h5>
                     <h6 style='color: purple;'>Knowledge:</h6>
                     Using icons and navigations bars designed by Bootstraps. <br><br>
 
@@ -217,9 +217,9 @@
         <!-- Swift -->
             <div class='sbox' id='s10'>
                 <a class='closelink' href='javascript:close10()'>X</a>
-                <h1>Swift</h1>
+                <h1 class='sk-title'>Swift</h1>
                 <p>
-                    <h5> 1 Years of School Exerpience </h5>
+                    <h5 class='sk-sub-title'> 1 Years of School Exerpience </h5>
                     <h6 style='color: purple;'>Knowledge:</h6>
                     Developing & creating mobile applications. <br><br>
 
@@ -234,9 +234,9 @@
         <!-- Adobe Photoshop-->
             <div class='sbox' id='s11'>
                 <a class='closelink' href='javascript:close11()'>X</a>
-                <h1>Adobe Photoshop</h1>
+                <h1 class='sk-title'>Adobe Photoshop</h1>
                 <p>
-                    <h5> 5 Years of School Exerpience </h5>
+                    <h5 class='sk-sub-title'> 5 Years of School Exerpience </h5>
                     <h6 style='color: purple;'>Knowledge:</h6>
                     Desiging and printing art pieces and designs on to products like tops and bottoms through screen printing. <br>
                     Editing pictures. <br><br>
@@ -254,9 +254,9 @@
         <!-- Adobe Illustrator -->
             <div class='sbox' id='s12'>
                 <a class='closelink' href='javascript:close12()'>X</a>
-                <h1>Adobe Illustrator</h1>
+                <h1 class='sk-title'>Adobe Illustrator</h1>
                 <p>
-                    <h5> 5 Years of School Exerpience </h5>
+                    <h5 class='sk-sub-title'> 5 Years of School Exerpience </h5>
                     <h6 style='color: purple;'>Knowledge:</h6>
                     Designing Logos. <br>
                     Desiging and printing art pieces and designs on to products like tops and bottoms through screen printing. <br><br>
@@ -274,9 +274,9 @@
         <!-- JavaScript -->
             <div class='sbox' id='s13'>
                 <a class='closelink' href='javascript:close13()'>X</a>
-                <h1>JavaScript</h1>
+                <h1 class='sk-title'>JavaScript</h1>
                 <p>
-                    <h5> 2.5 Years of School Exerpience </h5>
+                    <h5 class='sk-sub-title'> 2.5 Years of School Exerpience </h5>
                     <h6 style='color: purple;'>Knowledge:</h6>
                     Using JS to work with html when events happen. <br><br>
 
@@ -294,9 +294,9 @@
         <!-- Node.js -->
             <div class='sbox' id='s14'>
                 <a class='closelink' href='javascript:close14()'>X</a>
-                <h1>Node.js</h1>
+                <h1 class='sk-title'>Node.js</h1>
                 <p>
-                    <h5> 1 Years of School Exerpience </h5>
+                    <h5 class='sk-sub-title'> 1 Years of School Experience </h5>
                     <h6 style='color: purple;'>Knowledge:</h6>
                     Using Node.js to connect to databases and to scrape the web. <br><br>
 
@@ -306,6 +306,21 @@
                     <h6 style='color: purple;'>Courses Taken:</h6>
                     JavaScript & DHTML <br>
                     Self Teaching 
+                </p>
+            </div>
+
+            <!-- React.js -->
+            <div class='sbox' id='s15'>
+                <a class='closelink' href='javascript:close14()'>X</a>
+                <h1 class='sk-title'>React.js</h1>
+                <p>
+                    <h5 class='sk-sub-title'> 2 Years of Self Teaching </h5>
+                    <h6 style='color: purple;'>Knowledge:</h6>
+                    Leveraging React.js to develop dynamic websites and web applications, incorporating user data storage in both a MySQL server and a Firebase server, and utilizing functions for enhanced functionality.<br><br>
+
+                    <h6 style='color: purple;'>Projects Worked On:</h6>
+                    Movie Insider Website <br>
+                    Packed AI Web Application <br><br>
                 </p>
             </div>
     ";
